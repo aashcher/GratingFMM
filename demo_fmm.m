@@ -46,7 +46,7 @@ V_inc(ind0,2) = 1; % plane wave coming from the superstrate
 %% scattering matrix calculation
 	% calculate Fourier image matrix of the dielectric permittivity function
 	% for a lamellar grating with filling factor 0.4
-FM = calc_emn_lam(no,0.4,eps_gr,eps_cov); % lamellar grating
+FM = calc_emn_lam(no,0.4,eps_gr,eps_sup); % lamellar grating
 	% scattering matrix of the grating
 SM = fmm(no,kx0,kg,kh,eps_sub,eps_sup,FM,pol);
 
