@@ -30,23 +30,23 @@ along with GratingFMM. If not, see <https://www.gnu.org/licenses/>.
 % T: T-matrix of size 4*no by 4*no
 %% implementation:
 function [T] = fmm_calc_T(no, EV, HV, kz, eps, pol)
-    T = zeros(2*no,2*no);
-		ib1 = [1:no];
-		ib2 = [no+1:2*no];
-    if strcmp(pol,'TE')
-			ikz = transpose(0.5./kz);
-			T(ib1,ib1) = HV.*ikz;
-			T(ib2,ib1) = 0.5*EV - T(ib1,ib1);
-			T(ib1,ib1) = T(ib1,ib1) + 0.5*EV;
-			T(ib1,ib2) = T(ib2,ib1);
-			T(ib2,ib2) = T(ib1,ib1);
-    elseif strcmp(pol,'TM')
-			eikz = transpose((0.5*eps)./kz);
-			T(ib1,ib1) = EV.*eikz;
-			T(ib2,ib1) = 0.5*HV - T(ib1,ib1);
-			T(ib1,ib1) = T(ib1,ib1) + 0.5*HV;
-			T(ib1,ib2) = -T(ib2,ib1);
-			T(ib2,ib2) = -T(ib1,ib1);
-    end
+	T = zeros(2*no,2*no);
+	ib1 = [1:no];
+	ib2 = [no+1:2*no];
+	if strcmp(pol,'TE')
+		ikz = transpose(0.5./kz);
+		T(ib1,ib1) = -HV.*ikz;
+		T(ib2,ib1) = 0.5*EV - T(ib1,ib1);
+		T(ib1,ib1) = T(ib1,ib1) + 0.5*EV;
+		T(ib1,ib2) = T(ib2,ib1);
+		T(ib2,ib2) = T(ib1,ib1);
+	elseif strcmp(pol,'TM')
+		eikz = transpose((0.5*eps)./kz);
+		T(ib1,ib1) = EV.*eikz;
+		T(ib2,ib1) = 0.5*HV - T(ib1,ib1);
+		T(ib1,ib1) = T(ib1,ib1) + 0.5*HV;
+		T(ib1,ib2) = -T(ib2,ib1);
+		T(ib2,ib2) = -T(ib1,ib1);
+	end
 end
 

@@ -34,7 +34,7 @@ eps_sub = 1.5^2; % substrate permittivity
 eps_gr = 3.17^2; %grating permittivity
 eps_sup = 1; % superstrate permittivity
 	% method parameters
-no = 15; % number of Fourier modes
+no = 11; % number of Fourier modes
 ind0 = ceil(no/2); % index of the zero harmonic (0th order diffraction)
 	% incidence
 theta = 10; % angle of incidence
