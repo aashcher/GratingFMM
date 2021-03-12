@@ -18,7 +18,8 @@ along with GratingFMM. If not, see <https://www.gnu.org/licenses/>.
 %}
 %% description:
 % calculate a permittivity Fourier matrix of a 2D grating with cylindrical
-% pithches being periodic in x and y dimensions of the 3D Cartesian coordinates
+% pithches or holes being periodic in x and y dimensions of the 3D
+% Cartesian coordinates
 %% input:
 % xno, yno: numbers of Fourier harmonics
 % rpx, rpy: radius-to-period ratios

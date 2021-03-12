@@ -48,7 +48,7 @@ eps_gr = 2.1^2; % grating permittivity
 eps_sup = 1.5^2; % superstrate permittivity
 
 	%% S-matrix calculation
-fprintf("ORTHOGONAL PERIOD GRATING:\n");
+fprintf("O\n");
 
 	% calculate Fourier image matrix of the dielectric permittivity function
 	% for a 2D photonic crystal slab with rectangular period and rectangular
@@ -102,13 +102,11 @@ fprintf(" 0th TE order efficiency in superstrate: %f\n", V_eff(0*no+ixy,2));
 fprintf(" 0th TM order efficiency in superstrate: %f\n", V_eff(1*no+ixy,2));
 
 %% diffraction by hexagonal cylinder gratings
-fprintf("\nNON-ORTHOGONAL PERIOD GRATING:\n");
-
-no1 = 15;
-no2 = 15;
+no1 = 11;
+no2 = 11;
 no = no1*no2;
 
-f_ind = @(i,j) (ceil(no1/2)-1+i)*no2+ceil(no2/2)+j;
+f_ind = @(i,j) (ceil(xno/2)-1+i)*yno+ceil(yno/2)+j;
 ixy = f_ind(0,0);
 
 rc = 0.5; % cylinder radius

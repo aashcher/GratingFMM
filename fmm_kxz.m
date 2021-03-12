@@ -39,6 +39,12 @@ function [kz1, kz2, kx, kxy] = fmm_kxz(no, kx0, ky0, kg, eps1, eps2)
 
 	kz1 = sqrt(eps1 - kxy);
 	kz2 = sqrt(eps2 - kxy);
+
+	if sum(abs(kz1) < 1e-12) > 0 || sum(abs(kz2) < 1e-12) > 0
+		kz1 = sqrt(eps1 - kxy + 1e-10);
+		kz2 = sqrt(eps2 - kxy + 1e-10);
+	end
+
 	ind = angle(kz1) < -1e-12;
 	kz1(ind) = -kz1(ind);
 	ind = angle(kz2) < -1e-12;

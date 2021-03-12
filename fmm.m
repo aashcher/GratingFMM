@@ -40,7 +40,7 @@ along with GratingFMM. If not, see <https://www.gnu.org/licenses/>.
 %  from the substrate to the superstrate under the plane wave illumination
 %  with unit amplitude is SM(ind_0+i, ind_0, 2, 1)
 %% implementation
-function [SM] = fmm(no, kx0, kg, kh, eps1, eps2, FE, pol)
+function SM = fmm(no, kx0, kg, kh, eps1, eps2, FE, pol)
 		% wavevector projections
 	[kz1, kz2, kx] = fmm_kxz(no, kx0, 0, kg, eps1, eps2);
 		% block indices
